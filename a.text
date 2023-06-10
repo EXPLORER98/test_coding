@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <script type="text/javascript" >
+        function validate(){
+            if(document.myForm.email.value == ""){
+                alert("Please provide your mail id");
+                documemt.myForm.email.focus();
+                return false;
+            }
+            </script>
+        }
+        <u><h1><center>Registration Form</center></h1></u>
+        <form action="" method="post" name="myForm" onsubmit="return(validate());">
+            <table>
+                <tr>
+                    <td>Email ID</td>
+                    <td><input type="email" name="email" placeholder="Enter Email"></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" placeholder="Enter name"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td><input type="phone" name="phone"></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td><input type="text" name="state"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Comment
+                    </td>
+                    <td><input type="text" name="comment"></td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
+
+
+
+
+ <?php
+    $filename = $_FILES["uploadfile"]["name"];
+    $tempname = $FILES["uploadfile"]["tmp_name"];
+    $folder = "images/".$filename;
+    echo $folder;
+    ?>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+
+
+
+         <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Sl No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Stream</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $sql = "SELECT * FROM 'regd'";
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo"   <tr>
+                            <th scope='row'>".$row['$id']."</th>
+                            <td>" . $row['name'] ."</td>
+                            <td> ".  $row['stream'] ."</td>
+                            <td>Actions</td>
+                        </tr>";
+                        echo $row['id']. ".Name". $row['name']."Stream ".$row['stream'];
+                        echo "<br>";
+                    }
+                    ?>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+
+<td><img width="60" height="60" src="images/avtar3.png<?php echo $row['photo']; ?>"></td>

@@ -1,0 +1,49 @@
+
+<html>
+    <head>
+        <title>Get elements</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+       
+        </script>
+    </head>
+    <body>
+        
+        <input type="text" name="email" id="email">
+        <input type="phone" name="phone" id="phone">
+
+        <input type="radio" name="gender"  id="male" value="male">Male
+        <input type="radio" name="gender"   id="female" value="female">Female
+        <button onclick="getElementName()">Submit</button>
+        
+        <p id="useremail"></p>
+        <p id="userphone"></p>
+        <p id="mmale"></p>
+        <p id="ffemale"></p>
+        <script type="text/javascript">          
+            
+            function getElementName(){
+               
+           var x =document.getElementById("email").value;
+           document.getElementById("useremail").innerHTML = x;
+         
+           var a =document.getElementById("phone").value;
+           document.getElementById("userphone").innerHTML = a;
+           console.log(a);
+           
+           if(document.getElementById('male').checked) {   
+                document.getElementById('mmale').innerHTML   
+                    = document.getElementById("male").value ;  
+           }
+           else   {
+            document.getElementById('ffemale').innerHTML =
+            document.getElementById('female').value;
+           }
+           
+           
+            }
+          
+    
+        </script>
+    </body>
+     
+</html>
