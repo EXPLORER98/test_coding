@@ -22,7 +22,7 @@
            $sql = "INSERT INTO regd (name,email,phone,gender,stream,remark,state)
              VALUES('$name','$email','$phone','$gender','$stream','$remark','$state')";
              
-        
+                
              $query_run = mysqli_query($conn,$sql);
              if($query_run){
              echo '<script>alert("Data Inserted")</script>';
