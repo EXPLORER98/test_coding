@@ -15,5 +15,6 @@ if($res == $n){
 else
 {
     echo "not palindrome";
+    echo "heyyyy";
 }
 ?>
