@@ -1,15 +1,21 @@
 <html>
     <head>
-        <title>Insert Page</title>
+        <title>Update Page</title>
     </head>
     <body>
         <center>
             <?php
+	
+			
            
-           include 'dbcon.php';
-            $conn = mysqli_connect("localhost","root","","student_db");
+          
+     include 'dbcon.php';
+	 $conn = mysqli_connect("localhost","root","","student_db");
+		
          
-    
+		if($_POST['update'])
+		{
+			
             $name = $_REQUEST['name'];
             $email = $_REQUEST['email'];
             $phone = $_REQUEST['phone'];
@@ -19,15 +25,21 @@
             $state = $_REQUEST['state'];
 
            
-           $sql = "INSERT INTO regd (name,email,phone,gender,stream,remark,state)
-             VALUES('$name','$email','$phone','$gender','$stream','$remark','$state')";
+			$id = $_REQUEST['id'];
+			
+
+		$sql = "UPDATE regd SET name='$name',email='$email',phone='$phone',gender='$gender',
+		stream='$stream',remark='$remark',state='$state' WHERE id='$id' ";
              
              $query_run = mysqli_query($conn,$sql);
              if($query_run){
-             echo '<script>alert("Data Inserted")</script>';
+             echo "Data updated";
              }
+			 else{
+				echo "Failed to update";
+			 }
             
-
+			}
 
 
              ?>

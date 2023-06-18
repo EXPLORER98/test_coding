@@ -3,12 +3,12 @@
         <title>Registration Form</title>
     </head>
     <body>
-        <form action="student.php" method="post" enctype="multipart/form-data">
+        <form name="myForm" action="student3.php"  onSubmit="return validate()" method="post">
             <table>
                 <tr>
                     <td>Name :</td>
                     <td>
-                        <input type="text" name="name" placeholder="Enter your name">
+                        <input type="text" name="name" placeholder="Enter your name" maxlength="30"/>
                     </td>
                 </tr>
                 <tr>
@@ -20,39 +20,16 @@
                 <tr>
                     <td>Phone Number : </td>
                     <td>
-                        <input type="phone" name="phone" placeholder="Enter your phone number">
+                        <input type="phone" name="phone" id="phone" placeholder="Enter your phone number">
                     </td>
                 </tr>
-                <tr>
-                    <td>Gender : </td>
-                    <td>
-                        <input type="radio" name="gender" value="male">Male
-                        <input type="radio" name="gender" value="female">Female
-                    </td>
-                </tr>
-                <tr>
-                    <td>Stream : </td>
-                    <td>
-                        <input type="radio" name="stream" value="arts">
-                        <label for="arts">Arts</label><br>
-                        <input type="radio" name="stream" value="science">
-                        <label for="science">Science</label><br>
-                        <input type="radio" name="stream" value="commerce">
-                        <label for="commerce">Commerce</label><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Remark : </td>
-                    <td>
-                        <input type="textarea" name="remark" >
-                    </td>
-                </tr>
+               
                 <tr>
                     <td>State : </td>   
                      <td>
                         <select name="state">
                         <label for="state"></label> 
-                        <option value="choose yours">Select</option>
+                        <option value="Select">Select</option>
                         <option value="Andhra Pradesh" name="state">Andhra Pradesh</option>
                         <option value="Bihar" name="state">Bihar</option>
                         <option value="Odisha" name="state">Odisha</option>
@@ -60,9 +37,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Image: </td>
-                    <td> <input type="file" name="uploadfile"></td>
+                    <td>Comment : </td>
+                    <td>
+                        <input type="textarea" name="comment" placeholder="Enter your message here...">
+                    </td>
                 </tr>
+               
+               
                 <tr>
                     <td>
                         <input type="submit">
@@ -70,6 +51,33 @@
                 </tr>
             </table>
         </form>
+        <script type="text/javascript">
+            function validate(){
+                let x = document.forms["myForm"]["name"].value;
+      if (x == "") {
+    alert("Name must be filled out");
+    return false;
+    }
+    let y = document.forms["myForm"]["email"].value;
+      if (y == "") {
+    alert("Email must be filled out");
+    return false;
+    }
+    var phone = document.myForm.phone;
+   if(phone.value.length <= 0)
+   {
+    alert("Enter phone number");
+    return false;
+   }
+   var state = document.myForm.state;
+   if(state.value == "Select")
+   {
+    alert("Choose your State");
+    return false;
+   }
+  
+}
+        </script>
 
     </body>
    

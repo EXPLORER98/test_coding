@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Insert Page</title>
+    <title>Php crud</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
     <?php
-   error_reporting(0);
    
+    include 'student.php';
     ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -45,30 +45,30 @@
 
         <div class="container" my-4>
             <h2>Registration form</h2>
-            <div class="w-50">
+            <div class="bg-info w-50">
                 <label for="exampleFormControlInput1" class="form-label">Name</label>
                 <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
                     placeholder="your name" required>
             </div>
-            <div class=" w-50">
+            <div class="bg-info w-50">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
                 <input type="email" name="email" class="form-control" id="exampleFormControlInput2"
                     placeholder="name@example.com">
             </div>
-            <div class=" w-50">
+            <div class="bg-info w-50">
                 <label for="exampleFormControlInput1" class="form-label">Phone</label>
                 <input type="phone" name="phone" class="form-control" id="exampleFormControlInput3"
                     placeholder="your phone number">
             </div>
             <div>
-                <div class=" w-50">
+                <div class="bg-info w-50">
                     <label for="exampleFormControlInput1" class="form-label">Gender:</label><br>
                 </div>
                 <input type="radio" name="gender" value="male">Male
                 <input type="radio" name="gender" value="female">Female
             </div>
             <div>
-                <div class=" w-50">
+                <div class="bg-info w-50">
                     <label for="stream"> Stream :</label><br>
                 </div>
                 <input type="checkbox" id="stream" name="stream" value="Science">
@@ -80,16 +80,15 @@
 
             </div>
 
-            <div class=" w-50">
+            <div class="bg-info w-50">
                 <label for="exampleFormControlTextarea1" class="form-label">Remark</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" name="remark" rows="3"></textarea>
             </div>
-            <div class="d-grid gap-1">
             <div class="mb-3">
-                <div class="w-50">
+                <div class="bg-info w-50">
                     <label for="state">State: </label>
-                
-                <select name="state" class="form-select form-select-sm">
+                </div>
+                <select name="state">
 
                     <option value="select">Select</option>
                     <option value="Andhra Pradesh" name="state">Andhra Pradesh</option>
@@ -97,13 +96,8 @@
                     <option value="Odisha" name="state">Odisha</option>
                 </select>
             </div>
-    
-            <div>
-                <br>
-             <input type="submit" class ="btn btn-primary">
-           </div>
+            <input type="submit" text-align:center>
         </div>
-</div>
        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

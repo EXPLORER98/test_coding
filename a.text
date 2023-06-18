@@ -114,3 +114,50 @@
 
 
 <td><img width="60" height="60" src="images/avtar3.png<?php echo $row['photo']; ?>"></td>
+
+
+
+ mysqli_close($conn);
+
+
+  $query = mysqli_query($conn, "select *from regd");
+
+
+
+  
+    if($_POST['update'])
+    {
+     $name = $_POST['name'];
+     $email = $_POST['email'];
+     $phone = $_POST['phone'];
+     $gender = $_POST['gender'];
+     $stream = $_POST['stream'];
+     $remark = $_POST['remark'];
+     $state = $_POST['state'];
+
+     $query = "UPDATE regd set name='$name',email='$email',phone='$phone',
+     gender='$gender',stream='$stream',remark='$remark',state='$state' WHERE id='$id'";
+
+     $data = mysqli_query($conn,$query);
+    
+     if($data)
+     {
+        echo "Record Updated";
+     }
+     else{
+        echo "Failed to update";
+     }
+    }
+
+
+     <?php
+    error_reporting(0);
+    include("dbcon.php");
+     $id = $_GET['id'];
+
+     $query = "SELECT * FROM regd WHERE id='$id'";
+     $data = mysqli_query($conn, $query);
+     
+      $row = mysqli_fetch_array($data); 
+    ?>
+

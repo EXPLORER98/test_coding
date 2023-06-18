@@ -13,23 +13,18 @@
             $name = $_REQUEST['name'];
             $email = $_REQUEST['email'];
             $phone = $_REQUEST['phone'];
-            $gender = $_REQUEST['gender'];
-            $stream = $_REQUEST['stream'];
-            $remark = $_REQUEST['remark'];
             $state = $_REQUEST['state'];
+            $comment = $_REQUEST['comment'];
 
            
-           $sql = "INSERT INTO regd (name,email,phone,gender,stream,remark,state)
-             VALUES('$name','$email','$phone','$gender','$stream','$remark','$state')";
+           $sql = "INSERT INTO student (name,email,phone,state,comment)
+             VALUES('$name','$email','$phone','$state','$comment')";
              
              $query_run = mysqli_query($conn,$sql);
              if($query_run){
              echo '<script>alert("Data Inserted")</script>';
              }
             
-
-
-
              ?>
 
 
